@@ -16,7 +16,14 @@ function Navbar() {
           href="/users"
           className="border-b-2 border-transparent hover:border-blue-500 hover:transition-all"
         >
-          Users
+          List
+        </Link>
+
+        <Link
+          href="/users/create"
+          className="border-b-2 border-transparent hover:border-blue-500 hover:transition-all"
+        >
+          Create
         </Link>
       </div>
     </nav>
