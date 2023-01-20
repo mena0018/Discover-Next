@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -12,4 +10,10 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-![Screenshot 2022-12-29 at 11 52 37](https://user-images.githubusercontent.com/89834824/209941174-357a0755-6902-43a4-86ae-bc6265d64ce9.png)
+<img width="1427" alt="Screenshot 2023-01-20 at 10 10 57" src="https://user-images.githubusercontent.com/89834824/213658202-f336becf-1319-4261-8262-924de2366782.png">
+
+<br><br>
+
+# Why choosing Next.Js
+
+<img width="1434" alt="Screenshot 2023-01-20 at 10 17 39" src="https://user-images.githubusercontent.com/89834824/213659782-c0592972-a2fb-4bd3-bf66-93a8a58ff578.png">
