@@ -1,6 +1,7 @@
 import Card from '../../components/Card';
 import User from '../../types/UserType';
 import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
 type Props = {
   data: User[];
@@ -11,6 +12,11 @@ function UsersPage({ data }: Props) {
 
   return (
     <>
+      <Head>
+        <title>List of Users</title>
+        <meta name='description' content='Page displaying a list of all users' />
+      </Head>
+
       <h1 className='text-center text-white text-4xl font-semibold tracking-wide py-5'>
         List of Users
       </h1>
