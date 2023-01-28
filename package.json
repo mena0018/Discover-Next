@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "npx playwright test"
   },
   "dependencies": {
     "daisyui": "^2.47.0",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.0.5",
+    "@playwright/test": "^1.30.0",
     "@types/node": "^18.11.10",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
