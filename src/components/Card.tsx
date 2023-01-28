@@ -1,5 +1,5 @@
 import React from 'react';
-import User from '../types/UserType';
+import User from '@/types/UserType';
 import Link from 'next/link';
 
 type Props = {

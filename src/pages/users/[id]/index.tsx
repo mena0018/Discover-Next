@@ -1,9 +1,9 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
-import User from '../../../types/UserType';
 import Link from 'next/link';
-import Image from 'next/image';
-import Placeholder from '/public/placeholder.jpg';
 import Head from 'next/head';
+import Image from 'next/image';
+import User from '@/types/UserType';
+import Placeholder from '/public/placeholder.jpg';
 
 type Props = {
   user: User;

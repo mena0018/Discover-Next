@@ -1,5 +1,5 @@
-import Card from '../../components/Card';
-import User from '../../types/UserType';
+import Card from '@/components/Card';
+import User from '@/types/UserType';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
