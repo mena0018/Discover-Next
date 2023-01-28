@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import User from '@/types/UserType';
-import Placeholder from '/public/placeholder.jpg';
+import Avatar from '/public/avatar.jpg';
+import PlaceHolder from '@/components/PlaceHolder';
 
 type Props = {
   user: User;
@@ -20,7 +21,11 @@ function User({ user }: Props) {
       <div className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
         <div className='card bg-base-100 shadow-xl'>
           <figure>
-            <Image src={Placeholder} alt='Shoes' className='max-h-72 object-cover' />
+            {user ? (
+              <Image src={Avatar} alt='Shoes' className='max-h-72 object-cover' />
+            ) : (
+              <PlaceHolder />
+            )}
           </figure>
 
           <div className='card-body'>
