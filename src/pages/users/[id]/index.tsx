@@ -1,16 +1,9 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image';
-import User from '@/types/UserType';
-import Avatar from '/public/avatar.jpg';
-import PlaceHolder from '@/components/PlaceHolder';
+import User, { UserProps } from '@/types/UserType';
+import UserDetail from '@/components/UserDetail';
 
-type Props = {
-  user: User;
-};
-
-function User({ user }: Props) {
+export default function UserPage({ user }: UserProps) {
   return (
     <>
       <Head>
@@ -18,38 +11,12 @@ function User({ user }: Props) {
         <meta name='description' content='Page detail of a user' />
       </Head>
 
-      <div className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
-        <div className='card bg-base-100 shadow-xl'>
-          <figure>
-            {user ? (
-              <Image src={Avatar} alt='Shoes' className='max-h-72 object-cover' />
-            ) : (
-              <PlaceHolder />
-            )}
-          </figure>
-
-          <div className='card-body'>
-            <h2 className='card-title'>
-              {user.name}
-              <div className='badge badge-secondary'>NEW</div>
-            </h2>
-            <p>{user.company.name}</p>
-            <div className='card-actions justify-end mt-4'>
-              <div className='badge badge-outline'>{user.website}</div>
-              <div className='badge badge-outline'>{user.email}</div>
-            </div>
-          </div>
-        </div>
-
-        <Link href='/users' className='btn btn-primary btn-wide'>
-          Go back
-        </Link>
-      </div>
+      <section className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
+        <UserDetail user={user} />
+      </section>
     </>
   );
 }
-
-export default User;
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
   const id = context!.params!.id;

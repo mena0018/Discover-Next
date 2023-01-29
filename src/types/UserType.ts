@@ -28,4 +28,8 @@ export type User = {
   company: Company;
 };
 
+export type UserProps = {
+  user: User;
+};
+
 export default User;
