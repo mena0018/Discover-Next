@@ -1,4 +1,5 @@
 'use client';
+
 import { useRouter } from 'next/navigation';
 
 function Form() {
@@ -16,7 +17,7 @@ function Form() {
       body: JSON.stringify({ name, number }),
     });
 
-    router.refresh();
+    router.push('/users');
   };
 
   return (
