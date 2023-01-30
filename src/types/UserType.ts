@@ -32,4 +32,14 @@ export type UserProps = {
   user: User;
 };
 
+export type UsersProps = {
+  users: User[];
+};
+
+export type UsersParams = {
+  params: {
+    id: string;
+  };
+};
+
 export default User;

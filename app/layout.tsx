@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar';
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang='en' className='h-screen'>
-      <body className='h-screen'>
+    <html lang='en'>
+      <body>
         <Navbar />
         {children}
       </body>

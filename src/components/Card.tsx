@@ -1,12 +1,8 @@
 import React from 'react';
-import User from '@/types/UserType';
 import Link from 'next/link';
+import { UserProps } from '../types/UserType';
 
-type Props = {
-  user: User;
-};
-
-function Card({ user }: Props) {
+function Card({ user }: UserProps) {
   return (
     <div className='card w-96 bg-base-300 text-white'>
       <div className='card-body'>

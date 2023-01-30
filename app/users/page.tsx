@@ -1,12 +1,5 @@
 import UsersList from '@/components/UsersList';
-import User from '@/types/UserType';
-
-async function getUsers() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data: User[] = await res.json();
-
-  return data;
-}
+import { getUsers } from 'src/services/api';
 
 export default async function UsersPage() {
   const users = await getUsers();

@@ -1,19 +1,14 @@
 import Image from 'next/image';
 import Avatar from '/public/avatar.jpg';
-import PlaceHolder from '@/components/PlaceHolder';
 import Link from 'next/link';
 import { UserProps } from '@/types/UserType';
 
 export default function UserDetail({ user }: UserProps) {
   return (
-    <>
+    <section className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
       <div className='card bg-base-100 shadow-xl'>
         <figure>
-          {user ? (
-            <Image src={Avatar} alt='Shoes' className='max-h-72 object-cover' />
-          ) : (
-            <PlaceHolder />
-          )}
+          <Image src={Avatar} alt='Shoes' priority={true} className='max-h-72 object-cover' />
         </figure>
 
         <div className='card-body'>
@@ -32,6 +27,6 @@ export default function UserDetail({ user }: UserProps) {
       <Link href='/users' className='btn btn-primary btn-wide'>
         Go back
       </Link>
-    </>
+    </section>
   );
 }
