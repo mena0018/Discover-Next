@@ -1,6 +1,6 @@
-import { UsersParams } from '@/types/UserType';
-import UserDetail from '@/components/UserDetail';
-import { getUser, getUsers } from 'src/services/api';
+import { UsersParams } from 'types/UserType';
+import UserDetail from 'components/UserDetail';
+import { getUser, getUsers } from 'lib/api';
 
 export async function generateStaticParams() {
   const users = await getUsers();

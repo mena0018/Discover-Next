@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { UserProps } from '../types/UserType';
+import { UserProps } from 'types/UserType';
 
 function Card({ user }: UserProps) {
   return (
