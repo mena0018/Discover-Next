@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const url = 'https://discover-next-js.vercel.app/users/create';
-const expectedUrl = 'https://discover-next-js.vercel.app/users/create?name=John+Doe&tel=99';
+const expectedUrl = 'https://discover-next-js.vercel.app/users';
 
 test('adding a user', async ({ page }) => {
   await page.goto(url);

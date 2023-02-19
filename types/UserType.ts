@@ -42,4 +42,10 @@ export type UsersParams = {
   };
 };
 
+export type UserPost = {
+  id: number;
+  name: string;
+  tel: number;
+};
+
 export default User;
