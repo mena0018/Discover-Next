@@ -1,32 +1,37 @@
-export type Geo = {
-  lat: string;
-  lng: string;
-};
+import { z } from 'zod';
 
-export type Address = {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
-  geo: Geo;
-};
+const zGeo = z.object({
+  lat: z.string(),
+  lng: z.string(),
+});
 
-export type Company = {
-  name: string;
-  catchPhrase: string;
-  bs: string;
-};
+const zAddress = z.object({
+  street: z.string(),
+  suite: z.string(),
+  city: z.string(),
+  zipcode: z.string(),
+  geo: zGeo,
+});
 
-export type User = {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: Address;
-  phone: string;
-  website: string;
-  company: Company;
-};
+const zCompany = z.object({
+  name: z.string(),
+  catchPhrase: z.string(),
+  bs: z.string(),
+});
+
+export const zUser = z.object({
+  id: z.number(),
+  name: z.string(),
+  username: z.string(),
+  phone: z.string(),
+  email: z.string(),
+  website: z.string(),
+  address: zAddress,
+  company: zCompany,
+});
+export type User = z.infer<typeof zUser>;
+
+export const zUsers = z.array(zUser);
 
 export type UserProps = {
   user: User;
