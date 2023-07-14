@@ -1,7 +1,7 @@
 'use client';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { UserPost } from '@/types/UserType';
+import { UserPost } from 'src/models/User';
 import { useRouter } from 'next/navigation';
 
 export default function Form() {

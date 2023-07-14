@@ -47,5 +47,3 @@ export type UserPost = {
   name: string;
   tel: number;
 };
-
-export default User;
