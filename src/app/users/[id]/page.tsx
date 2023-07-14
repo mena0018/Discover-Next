@@ -1,6 +1,12 @@
 import { UsersParams } from 'src/models/User';
 import UserDetail from 'src/components/UserDetail';
-import { getUser, getUsers } from 'src/app/lib/api';
+import { getUser, getUsers } from '@/lib/api';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'User Detail',
+  description: 'Page detail of a user',
+};
 
 export async function generateStaticParams() {
   const users = await getUsers();

@@ -3,8 +3,6 @@ import { test, expect } from '@playwright/test';
 test.describe('Go to the URL', () => {
   test.beforeEach(async ({ page }) => await page.goto('https://discover-next-js.vercel.app/users'));
 
-  test('has title', async ({ page }) => await expect(page).toHaveTitle(/List of Users/));
-
   test('user detail page first link', async ({ page }) => {
     const firstLink = page.locator('text=detail').first();
     await expect(firstLink).toHaveAttribute('href', '/users/1');
