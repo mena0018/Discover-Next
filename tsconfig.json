@@ -17,9 +17,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/pages/*": ["src/app/*"],
-      "@/components/*": ["src/components/*"],
-      "@/models/*": ["src/models/*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
