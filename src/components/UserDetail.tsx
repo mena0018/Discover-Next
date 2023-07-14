@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Avatar from '/public/avatar.jpg';
 import Link from 'next/link';
-import { UserProps } from 'types/UserType';
+import { UserProps } from 'src/models/User';
 
 export default function UserDetail({ user }: UserProps) {
   return (

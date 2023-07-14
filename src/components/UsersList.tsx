@@ -1,4 +1,4 @@
-import User, { UsersProps } from 'types/UserType';
+import { User, UsersProps } from 'src/models/User';
 import React from 'react';
 import Card from './Card';
 

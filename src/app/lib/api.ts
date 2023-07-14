@@ -1,6 +1,4 @@
-import 'server-only';
-
-import User from 'types/UserType';
+import { User } from 'src/models/User';
 
 export async function getUser(id: string) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
