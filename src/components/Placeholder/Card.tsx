@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Placeholder from '/public/placeholder.svg';
 
-export default function PlaceHolder() {
+export default function CardPlaceHolder() {
   return (
     <section className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
       <div className='bg-gray-600 card shadow-xl animate-pulse min-w-[400px] min-h-[300px]'>

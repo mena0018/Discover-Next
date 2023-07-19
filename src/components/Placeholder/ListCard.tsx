@@ -1,4 +1,4 @@
-export default function LoadingSkeleton() {
+export default function ListCardPlaceHolder() {
   return (
     <section className='py-5 px-3'>
       <h1 className='text-center text-white text-4xl font-semibold tracking-wide'>List of Users</h1>

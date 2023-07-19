@@ -1,7 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Avatar from '/public/avatar.jpg';
-import Link from 'next/link';
-import { UserProps } from 'src/models/User';
+import { UserProps } from '@/models';
 
 export default function UserDetail({ user }: UserProps) {
   return (
@@ -24,9 +25,9 @@ export default function UserDetail({ user }: UserProps) {
         </div>
       </div>
 
-      <Link href='/users' className='btn btn-primary btn-wide'>
+      <button onClick={() => history.back()} className='btn btn-primary btn-wide'>
         Go back
-      </Link>
+      </button>
     </section>
   );
 }

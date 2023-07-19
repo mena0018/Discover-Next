@@ -32,23 +32,3 @@ export const zUser = z.object({
 export type User = z.infer<typeof zUser>;
 
 export const zUsers = z.array(zUser);
-
-export type UserProps = {
-  user: User;
-};
-
-export type UsersProps = {
-  users: User[];
-};
-
-export type UsersParams = {
-  params: {
-    id: string;
-  };
-};
-
-export type UserPost = {
-  id: number;
-  name: string;
-  tel: number;
-};
