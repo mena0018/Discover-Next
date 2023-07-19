@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { UserProps } from 'src/models/User';
+import { UserProps } from '@/models';
 
 function Card({ user }: UserProps) {
   return (

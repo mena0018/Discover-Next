@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
-import Navbar from 'src/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 
 export const metadata: Metadata = {
   title: 'Discovering NextJS',

@@ -1,5 +1,5 @@
-import { UsersParams } from 'src/models/User';
-import UserDetail from 'src/components/UserDetail';
+import { UsersParams } from '@/models';
+import UserDetail from '@/components/User/Detail';
 import { getUser, getUsers } from '@/lib/api';
 import { Metadata } from 'next';
 
