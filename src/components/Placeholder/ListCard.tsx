@@ -1,4 +1,6 @@
-export default function ListCardPlaceHolder() {
+import { FC } from 'react';
+
+const ListCard: FC = () => {
   return (
     <section className='py-5 px-3'>
       <h1 className='text-center text-white text-4xl font-semibold tracking-wide'>List of Users</h1>
@@ -14,4 +16,6 @@ export default function ListCardPlaceHolder() {
       </div>
     </section>
   );
-}
+};
+
+export default ListCard;

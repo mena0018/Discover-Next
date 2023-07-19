@@ -1,5 +1,8 @@
+import { FC } from 'react';
 import ListCardPlaceholder from '@/components/Placeholder/ListCard';
 
-export default function Loading() {
+const loading: FC = () => {
   return <ListCardPlaceholder />;
-}
+};
+
+export default loading;

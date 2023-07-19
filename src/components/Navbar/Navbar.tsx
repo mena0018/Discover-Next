@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import Link from 'next/link';
 import LinkItem from './LinkItem';
 
-export default function Navbar() {
+const Navbar: FC = () => {
   return (
     <nav className='navbar bg-neutral text-neutral-content'>
       <div className='flex-1'>
@@ -18,4 +19,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

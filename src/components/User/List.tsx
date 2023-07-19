@@ -1,8 +1,8 @@
+import { FC } from 'react';
 import { User, UsersProps } from '@/models';
-import React from 'react';
 import Card from './Card';
 
-export default function UsersList({ users }: UsersProps) {
+const List: FC<UsersProps> = ({ users }) => {
   const usersList = users.map((user: User) => <Card key={user.id} user={user} />);
 
   return (
@@ -14,4 +14,6 @@ export default function UsersList({ users }: UsersProps) {
       </div>
     </section>
   );
-}
+};
+
+export default List;

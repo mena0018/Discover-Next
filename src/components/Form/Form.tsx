@@ -1,17 +1,13 @@
 'use client';
 
+import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Post } from '@/models';
 import { useRouter } from 'next/navigation';
 
-export default function Form() {
+const Form: FC = () => {
   const router = useRouter();
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Post>();
+  const { register, handleSubmit, formState: { errors }} = useForm<Post>(); // prettier-ignore
 
   const onSubmit: SubmitHandler<Post> = (data) => {
     alert(JSON.stringify(data));
@@ -66,4 +62,6 @@ export default function Form() {
       </div>
     </div>
   );
-}
+};
+
+export default Form;

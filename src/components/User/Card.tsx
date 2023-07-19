@@ -1,7 +1,8 @@
-import Link from 'next/link';
+import { FC } from 'react';
 import { UserProps } from '@/models';
+import Link from 'next/link';
 
-export default function Card({ user }: UserProps) {
+const Card: FC<UserProps> = ({ user }) => {
   return (
     <div className='card w-96 bg-base-300 text-white'>
       <div className='card-body'>
@@ -17,4 +18,6 @@ export default function Card({ user }: UserProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Card;

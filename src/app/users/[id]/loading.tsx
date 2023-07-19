@@ -1,5 +1,8 @@
+import { FC } from 'react';
 import CardPlaceHolder from '@/components/Placeholder/Card';
 
-export default function loading() {
+const loading: FC = () => {
   return <CardPlaceHolder />;
-}
+};
+
+export default loading;

@@ -1,7 +1,8 @@
-import Link from 'next/link';
+import { FC } from 'react';
 import { PostProps } from '@/models';
+import Link from 'next/link';
 
-function Card({ post }: PostProps) {
+const Card: FC<PostProps> = ({ post }) => {
   return (
     <div className='card w-96 bg-base-300 text-white min-h-[212px]'>
       <div className='card-body flex flex-col justify-between'>
@@ -17,6 +18,6 @@ function Card({ post }: PostProps) {
       </div>
     </div>
   );
-}
+};
 
 export default Card;

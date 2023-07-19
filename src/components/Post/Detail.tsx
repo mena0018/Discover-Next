@@ -1,13 +1,17 @@
 'use client';
 
-import Link from 'next/link';
+import { FC } from 'react';
 import { PostProps } from '@/models';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import Blog from '/public/blog.webp';
 
-export default function Detail({ post }: PostProps) {
+const Detail: FC<PostProps> = ({ post }) => {
+  const router = useRouter();
+
   return (
-    <section className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
+    <div className='mt-10 w-full max-w-sm mx-auto flex flex-col items-center justify-center gap-6 px-3 md:p-0'>
       <div className='card bg-base-100 shadow-xl'>
         <figure>
           <Image src={Blog} alt='Shoes' priority={true} className='max-h-72 object-cover' />
@@ -27,9 +31,11 @@ export default function Detail({ post }: PostProps) {
         </div>
       </div>
 
-      <button onClick={() => history.back()} className='btn btn-primary btn-wide'>
+      <button onClick={() => router.back()} className='btn btn-primary btn-wide'>
         Go back
       </button>
-    </section>
+    </div>
   );
-}
+};
+
+export default Detail;

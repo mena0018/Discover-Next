@@ -1,7 +1,8 @@
-import Card from './Card';
+import { FC } from 'react';
 import { Post, PostsProps } from '@/models';
+import Card from './Card';
 
-export default function PostsList({ posts }: PostsProps) {
+const List: FC<PostsProps> = ({ posts }) => {
   const postsList = posts.map((post: Post) => <Card key={post.id} post={post} />);
 
   return (
@@ -13,4 +14,6 @@ export default function PostsList({ posts }: PostsProps) {
       </div>
     </section>
   );
-}
+};
+
+export default List;

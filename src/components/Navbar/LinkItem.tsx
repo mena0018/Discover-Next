@@ -1,7 +1,8 @@
-import Link from 'next/link';
+import { FC } from 'react';
 import { LinkProps } from '@/models';
+import Link from 'next/link';
 
-export default function LinkItem({ name, route, isPost }: LinkProps) {
+const LinkItem: FC<LinkProps> = ({ name, route, isPost }) => {
   return (
     <li>
       <Link href={route} className='btn btn-ghost normal-case text-xl'>
@@ -33,4 +34,6 @@ export default function LinkItem({ name, route, isPost }: LinkProps) {
       </ul>
     </li>
   );
-}
+};
+
+export default LinkItem;
