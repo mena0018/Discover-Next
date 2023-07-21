@@ -1,4 +1,4 @@
-import { zPost, zPosts, zUser, zUsers } from '@/models';
+import { Post, zPost, zPosts, zUser, zUsers } from '@/models';
 
 export async function getUser(id: string) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
@@ -26,4 +26,13 @@ export async function getPost(id: string) {
   const postsData = await res.json();
 
   return zPost.parse(postsData);
+}
+
+export async function addPost(payload: Post) {
+  if (!zPost.safeParse(payload).success) throw new Error('Payload has invalid property');
+
+  return await fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
 }

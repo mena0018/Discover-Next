@@ -1,59 +1,27 @@
 'use client';
 
 import { FC } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { Post } from '@/models';
+import { addPost } from '@/lib/api';
 import { useRouter } from 'next/navigation';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import Field from './Field';
 
 const Form: FC = () => {
   const router = useRouter();
-  const { register, handleSubmit, formState: { errors }} = useForm<Post>(); // prettier-ignore
+  const { handleSubmit,register, formState: { errors }} = useForm<Post>(); // prettier-ignore
 
   const onSubmit: SubmitHandler<Post> = (data) => {
-    alert(JSON.stringify(data));
-    router.push('/posts');
+    addPost(data).then(() => router.push('/posts'));
   };
 
   return (
     <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300'>
       <div className='card-body'>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className='form-control'>
-            <label className='label' htmlFor='title'>
-              <span className='label-text'>Title</span>
-            </label>
-            <input
-              {...register('title', { required: true, pattern: /^[a-z ,.'-]+$/i })}
-              id='title'
-              placeholder='Enter your title'
-              className='input input-bordered'
-            />
-            {errors.title && errors.title.type === 'required' && (
-              <span className='error-msg'>Title is required</span>
-            )}
-            {errors.title && errors.title.type === 'pattern' && (
-              <span className='error-msg'>Character not allowed</span>
-            )}
-          </div>
-
-          <div className='form-control mt-3'>
-            <label className='label' htmlFor='userId'>
-              <span className='label-text'>userID</span>
-            </label>
-            <input
-              {...register('userId', { required: true, pattern: /^[0-9 ,.'-]*$/ })}
-              type='number'
-              id='userId'
-              placeholder='Enter the userId'
-              className='input input-bordered'
-            />
-            {errors.userId && errors.userId.type === 'required' && (
-              <span className='error-msg'>userID is required</span>
-            )}
-            {errors.userId && errors.userId.type === 'pattern' && (
-              <span className='error-msg'>Character not allowed</span>
-            )}
-          </div>
+          <Field property='userId' isNumberField errors={errors} register={register} />
+          <Field property='title' errors={errors} register={register} />
+          <Field property='body' errors={errors} register={register} />
 
           <div className='form-control mt-6'>
             <button className='btn btn-primary'>Submit</button>

@@ -1,3 +1,4 @@
+import { FieldErrors, RegisterOptions } from 'react-hook-form';
 import { Post } from './Post';
 import { User } from './User';
 
@@ -27,4 +28,11 @@ export type PostsProps = {
 
 export type PostProps = {
   post: Post;
+};
+
+export type FieldProps = {
+  property: keyof Post;
+  errors: FieldErrors;
+  isNumberField?: boolean;
+  register: (property: keyof Post, params: RegisterOptions | any) => {};
 };
