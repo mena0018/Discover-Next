@@ -3,6 +3,7 @@ import { FC } from 'react';
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
+import NotificationProvider from '@/context/Notification';
 
 export const metadata: Metadata = {
   title: 'Discovering NextJS',
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <html lang='en' data-theme='dark'>
+    <html lang='en' data-theme='dark' className='overflow-x-hidden'>
       <body>
         <Navbar />
-        {children}
+        <NotificationProvider>{children}</NotificationProvider>
       </body>
     </html>
   );

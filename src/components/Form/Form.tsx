@@ -5,14 +5,19 @@ import { Post } from '@/models';
 import { addPost } from '@/lib/api';
 import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNotification } from '@/hooks/useNotification';
 import Field from './Field';
 
 const Form: FC = () => {
   const router = useRouter();
-  const { handleSubmit,register, formState: { errors }} = useForm<Post>(); // prettier-ignore
+  const { addNotification } = useNotification();
+  const { handleSubmit, register, formState: { errors }} = useForm<Post>(); // prettier-ignore
 
   const onSubmit: SubmitHandler<Post> = (data) => {
-    addPost(data).then(() => router.push('/posts'));
+    addPost(data).then(() => {
+      addNotification({ text: 'Post created with success', color: 'green' });
+      router.push('/posts');
+    });
   };
 
   return (

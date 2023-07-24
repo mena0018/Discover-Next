@@ -11,7 +11,7 @@ const Navbar: FC = () => {
         </Link>
       </div>
 
-      <div className='flex-none'>
+      <div className='flex-none z-20'>
         <ul className='menu menu-horizontal px-1'>
           <LinkItem name='User' route='/users' />
           <LinkItem name='Post' route='/posts' isPost />

@@ -36,3 +36,8 @@ export type FieldProps = {
   isNumberField?: boolean;
   register: (property: keyof Post, params: RegisterOptions | any) => {};
 };
+
+export type Notification = {
+  text: string;
+  color: 'green' | 'red';
+};
