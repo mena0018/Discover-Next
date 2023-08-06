@@ -3,8 +3,8 @@ import { z } from 'zod';
 export const zPost = z.object({
   id: z.number().optional(),
   userId: z.number(),
-  title: z.string(),
-  body: z.string(),
+  title: z.string().min(5).max(100),
+  body: z.string().min(20).max(500),
 });
 export type Post = z.infer<typeof zPost>;
 

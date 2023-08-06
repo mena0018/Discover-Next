@@ -32,7 +32,7 @@ export type PostProps = {
 
 export type FieldProps = {
   property: keyof Post;
-  errors: FieldErrors;
+  errors: FieldErrors | any;
   isNumberField?: boolean;
   register: (property: keyof Post, params: RegisterOptions | any) => {};
 };

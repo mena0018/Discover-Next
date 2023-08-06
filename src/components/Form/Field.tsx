@@ -11,23 +11,14 @@ const Field: FC<FieldProps> = ({ property, isNumberField, errors, register }) =>
       </label>
 
       <input
-        {...register(property, {
-          required: true,
-          valueAsNumber: !!isNumberField,
-          pattern: isNumberField ? /^[0-9 ,.'-]*$/ : /^[0-9a-zA-Z ,.'-]+$/i,
-        })}
         id={property}
         className='input input-bordered'
         placeholder={`Enter the ${property}`}
         type={isNumberField ? 'number' : 'text'}
+        {...register(property, { valueAsNumber: !!isNumberField })}
       />
 
-      {errors[property] && errors[property]?.type === 'required' && (
-        <span className='error-msg'>{label} is required</span>
-      )}
-      {errors[property] && errors[property]?.type === 'pattern' && (
-        <span className='error-msg'>Character not allowed</span>
-      )}
+      {errors[property]?.message && <span className='error-msg'>{errors[property]?.message}</span>}
     </div>
   );
 };
