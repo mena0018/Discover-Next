@@ -1,8 +1,8 @@
 'use client';
 
 import { FC } from 'react';
-import { Post, zPost } from '@/models';
 import { addPost } from '@/lib/api';
+import { Post, zPost } from '@/models';
 import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -12,6 +12,7 @@ import Field from './Field';
 const Form: FC = () => {
   const router = useRouter();
   const { addNotification } = useNotification();
+
   const {
     handleSubmit,
     register,
@@ -22,8 +23,8 @@ const Form: FC = () => {
 
   const onSubmit: SubmitHandler<Post> = (data) => {
     addPost(data).then(() => {
-      addNotification({ text: 'Post created with success', color: 'green' });
       router.push('/posts');
+      addNotification({ text: 'Post created with success', color: 'green' });
     });
   };
 

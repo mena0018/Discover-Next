@@ -14,14 +14,13 @@ test.describe('Create a Post', () => {
     await page.getByPlaceholder('Enter the title').fill('Example of title');
 
     await page.getByPlaceholder('Enter the body').click();
-    await page.getByPlaceholder('Enter the body').fill('Example of body');
+    await page.getByPlaceholder('Enter the body').fill('Body with more than 20 characters');
 
     await page.getByRole('button', { name: 'Submit' }).click();
-
     await expect(page).toHaveURL(expectedUrl);
   });
 
-  test('Invalid Post payload', async ({ page }) => {
+  test('Invalid Post payload: Character not authorized ', async ({ page }) => {
     await page.getByPlaceholder('Enter the userId').click();
     await page.getByPlaceholder('Enter the userId').fill('1');
 
@@ -30,6 +29,34 @@ test.describe('Create a Post', () => {
 
     await page.getByPlaceholder('Enter the body').click();
     await page.getByPlaceholder('Enter the body').fill('Passing invalid characters like : <()>)');
+
+    await page.getByRole('button', { name: 'Submit' }).click();
+    await expect(page).toHaveURL(url);
+  });
+
+  test('Invalid Post payload: Body < 20 character', async ({ page }) => {
+    await page.getByPlaceholder('Enter the userId').click();
+    await page.getByPlaceholder('Enter the userId').fill('1');
+
+    await page.getByPlaceholder('Enter the title').click();
+    await page.getByPlaceholder('Enter the title').fill('Exemple of title');
+
+    await page.getByPlaceholder('Enter the body').click();
+    await page.getByPlaceholder('Enter the body').fill('Example of short body');
+
+    await page.getByRole('button', { name: 'Submit' }).click();
+    await expect(page).toHaveURL(url);
+  });
+
+  test('Invalid Post payload: Title < 5 character', async ({ page }) => {
+    await page.getByPlaceholder('Enter the userId').click();
+    await page.getByPlaceholder('Enter the userId').fill('1');
+
+    await page.getByPlaceholder('Enter the title').click();
+    await page.getByPlaceholder('Enter the title').fill('Title');
+
+    await page.getByPlaceholder('Enter the body').click();
+    await page.getByPlaceholder('Enter the body').fill('Body with more than 20 characters');
 
     await page.getByRole('button', { name: 'Submit' }).click();
 

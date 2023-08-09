@@ -1,14 +1,5 @@
-import { FieldErrors, RegisterOptions } from 'react-hook-form';
 import { Post } from './Post';
-import { User } from './User';
-
-export type UserProps = {
-  user: User;
-};
-
-export type UsersProps = {
-  users: User[];
-};
+import { FieldErrors, RegisterOptions } from 'react-hook-form';
 
 export type ParamsID = {
   params: {
@@ -22,14 +13,6 @@ export type LinkProps = {
   isPost?: boolean;
 };
 
-export type PostsProps = {
-  posts: Post[];
-};
-
-export type PostProps = {
-  post: Post;
-};
-
 export type FieldProps = {
   property: keyof Post;
   errors: FieldErrors | any;
@@ -40,4 +23,8 @@ export type FieldProps = {
 export type Notification = {
   text: string;
   color: 'green' | 'red';
+};
+
+export type NotificationRef = {
+  addNotificationRef: { current: (notification: Notification) => void };
 };

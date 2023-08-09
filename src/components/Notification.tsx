@@ -1,6 +1,6 @@
 import { Notification } from '@/models';
 import { FC, useContext, useState } from 'react';
-import { NotificationContext } from '@/context/Notification';
+import { NotificationContext } from '@/context/NotificationContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NotificationAlert: FC<Notification> = ({ text, color }) => {
@@ -10,8 +10,7 @@ const NotificationAlert: FC<Notification> = ({ text, color }) => {
         xmlns='http://www.w3.org/2000/svg'
         className='stroke-current shrink-0 h-6 w-6'
         fill='none'
-        viewBox='0 0 24 24'
-      >
+        viewBox='0 0 24 24'>
         <path
           strokeLinecap='round'
           strokeLinejoin='round'
@@ -44,8 +43,7 @@ const NotificationWrapper: FC = () => {
             key={index}
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 30 }}
-          >
+            exit={{ opacity: 0, x: 30 }}>
             <NotificationAlert {...item} />
           </motion.div>
         ))}

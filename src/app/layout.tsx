@@ -3,7 +3,7 @@ import { FC } from 'react';
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
-import NotificationProvider from '@/context/Notification';
+import NotificationProvider from '@/context/NotificationContext';
 
 export const metadata: Metadata = {
   title: 'Discovering NextJS',

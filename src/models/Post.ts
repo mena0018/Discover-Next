@@ -9,3 +9,11 @@ export const zPost = z.object({
 export type Post = z.infer<typeof zPost>;
 
 export const zPosts = z.array(zPost);
+
+export type PostsProps = {
+  posts: Post[];
+};
+
+export type PostProps = {
+  post: Post;
+};

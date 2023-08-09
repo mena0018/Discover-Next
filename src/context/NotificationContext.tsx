@@ -1,19 +1,17 @@
 'use client';
 
-import { Notification } from '@/models';
+import { Notification, NotificationRef } from '@/models';
 import { createContext, FC, PropsWithChildren, useRef } from 'react';
 import NotificationWrapper from '@/components/Notification';
 
-type Context = {
-  addNotificationRef: { current: (notification: Notification) => void };
-};
+const addNotification = (notification: Notification) => {};
 
-export const NotificationContext = createContext<Context>({
-  addNotificationRef: { current: (notification: Notification) => {} },
+export const NotificationContext = createContext<NotificationRef>({
+  addNotificationRef: { current: addNotification },
 });
 
 const NotificationProvider: FC<PropsWithChildren> = ({ children }) => {
-  const addNotificationRef = useRef((notification: Notification) => {});
+  const addNotificationRef = useRef(addNotification);
 
   return (
     <NotificationContext.Provider value={{ addNotificationRef }}>

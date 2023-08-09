@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Notification } from '@/models';
-import { NotificationContext } from '@/context/Notification';
+import { NotificationContext } from '@/context/NotificationContext';
 
 export function useNotification() {
   const { addNotificationRef } = useContext(NotificationContext);
